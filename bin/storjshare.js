@@ -16,7 +16,6 @@ var TelemetryReporter = require('storj-telemetry-reporter');
 var reporter = require('../lib/reporter');
 var utils = require('../lib/utils');
 var log = require('../lib/logger');
-var leveldown = require('leveldown');
 var bitcore = storj.deps.bitcore;
 
 var HOME = platform !== 'win32' ? process.env.HOME : process.env.USERPROFILE;
