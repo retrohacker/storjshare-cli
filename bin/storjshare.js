@@ -90,6 +90,7 @@ var ACTIONS = {
       var keypair = storj.KeyPair(privkey);
       var storageAdapter = storj.EmbeddedStorageAdapter(env.datadir);
       var farmerconf = {
+        bridgeUri: config.bridgeUri,
         keyPair: keypair,
         paymentAddress: config.address.trim(),
         storageManager: storj.StorageManager(storageAdapter, {
