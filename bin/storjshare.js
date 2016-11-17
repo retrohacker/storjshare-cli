@@ -90,7 +90,6 @@ var ACTIONS = {
       var keypair = storj.KeyPair(privkey);
       var storageAdapter = storj.EmbeddedStorageAdapter(env.datadir);
       var farmerconf = {
-        bridgeUri: config.bridgeUri,
         keyPair: keypair,
         paymentAddress: config.address.trim(),
         storageManager: storj.StorageManager(storageAdapter, {
@@ -116,6 +115,10 @@ var ACTIONS = {
           storj.FarmerInterface.DEFAULTS.opcodeSubscriptions :
           config.network.opcodes.map(utils.opcodeUpdate)
       };
+
+      if (config.bridgeUri) {
+        farmerconf.bridgeUri = config.bridgeUri;
+      }
 
       farmerconf.logger.pipe(process.stdout);
 
