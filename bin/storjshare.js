@@ -116,6 +116,10 @@ var ACTIONS = {
           config.network.opcodes.map(utils.opcodeUpdate)
       };
 
+      if (config.bridgeUri) {
+        farmerconf.bridgeUri = config.bridgeUri;
+      }
+
       farmerconf.logger.pipe(process.stdout);
 
       var farmer = new storj.FarmerInterface(farmerconf);
