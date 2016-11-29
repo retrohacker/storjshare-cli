@@ -100,7 +100,7 @@ var ACTIONS = {
         }),
         rpcAddress: config.network.address,
         maxOfferConcurrency: typeof config.network.concurrency === 'undefined' ?
-          storj.FarmerInterface.DEFAULTS.maxOfferConcurrency :
+          storj.Farmer.DEFAULTS.maxOfferConcurrency :
           config.network.concurrency,
         rpcPort: config.network.port,
         maxConnections: config.network.maxConnections,
@@ -112,7 +112,7 @@ var ACTIONS = {
         maxTunnels: config.network.tunnels,
         tunnelGatewayRange: config.network.gateways,
         opcodeSubscriptions: !Array.isArray(config.network.opcodes) ?
-          storj.FarmerInterface.DEFAULTS.opcodeSubscriptions :
+          storj.Farmer.DEFAULTS.opcodeSubscriptions :
           config.network.opcodes.map(utils.opcodeUpdate)
       };
 
@@ -122,7 +122,7 @@ var ACTIONS = {
 
       farmerconf.logger.pipe(process.stdout);
 
-      var farmer = new storj.FarmerInterface(farmerconf);
+      var farmer = new storj.Farmer(farmerconf);
 
       farmer.join(function(err) {
         if (err) {
