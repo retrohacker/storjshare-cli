@@ -116,6 +116,10 @@ var ACTIONS = {
           config.network.opcodes.map(utils.opcodeUpdate)
       };
 
+      if (config.network.renterWhitelist) {
+        farmerconf.renterWhitelist = config.network.renterWhitelist;
+      }
+
       if (config.bridgeUri) {
         farmerconf.bridgeUri = config.bridgeUri;
       }
