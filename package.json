@@ -48,7 +48,7 @@
     "commander": "^2.9.0",
     "kad-logger-json": "^0.1.2",
     "prompt": "^1.0.0",
-    "storj-lib": "bookchin/storj-core",
+    "storj-lib": "^6.0.11",
     "storj-telemetry-reporter": "^4.0.0"
   }
 }
